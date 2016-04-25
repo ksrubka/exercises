@@ -44,7 +44,7 @@ public class SkarbFinder {
         List<Hint> hints = new ArrayList<>();
 
         public DataSet(){
-            this.nrOfHints = (int) (Math.random() * 101);
+            this.nrOfHints = (int) (Math.random() * 100001);
             System.out.println(nrOfHints);
             for (int hintNr = 0; hintNr < nrOfHints; hintNr++){
                 hints.add(new Hint());
@@ -55,18 +55,18 @@ public class SkarbFinder {
     public class Hint {
         int direction;
         int steps;
-        MovingStrategy moving;
+        MovingStrategy movingDirection;
 
         public Hint(){
             this.direction = (int) (Math.random() * 4);
-            this.steps = (int) (Math.random() * 101);
+            this.steps = (int) (Math.random() * 100001);
             System.out.println(direction + " " + steps);
-            this.moving = MovingStrategyFactory.create(direction);
+            this.movingDirection = MovingStrategyFactory.create(direction);
             go(steps);
         }
 
         public void go(int steps){
-            moving.go(steps, position);
+            movingDirection.go(steps, position);
         }
     }
 
