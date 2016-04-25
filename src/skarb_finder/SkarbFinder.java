@@ -16,9 +16,8 @@ public class SkarbFinder {
     public SkarbFinder(){
         this.nrOfDataSets = (int) (Math.random() * 51);
         System.out.println(nrOfDataSets);
-        for (int dataSetNr = 0; dataSetNr < nrOfDataSets; dataSetNr++){
+        for (int dataSetNr = 0; dataSetNr < nrOfDataSets; dataSetNr++)
             this.dataSets.add(new DataSet());
-        }
     }
 
     public static void main(String[] args) {
@@ -70,9 +69,8 @@ public class SkarbFinder {
         public DataSet(){
             this.nrOfHints = (int) (Math.random() * 100001);
             System.out.println(nrOfHints);
-            for (int hintNr = 0; hintNr < nrOfHints; hintNr++){
+            for (int hintNr = 0; hintNr < nrOfHints; hintNr++)
                 hints.add(new Hint());
-            }
         }
     }
 
