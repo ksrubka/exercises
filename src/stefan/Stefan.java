@@ -9,14 +9,12 @@ import java.util.Scanner;
 public class Stefan {
 
     public static void main(String[] args) {
-
         System.out.println("Wpisz liczbę miast na trasie koncertowej: ");
         Scanner scanner = new Scanner(System.in);
         int numOfCities = scanner.nextInt();
         Random random = new Random();
         int biggestProfit = 0;
         int generateProfit;
-
 
         for (int cityNum = 0; cityNum < numOfCities; cityNum++ ) {
             generateProfit = (random.nextInt(200000) - 100000);

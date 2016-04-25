@@ -10,9 +10,7 @@ import java.util.List;
 public class Exponentiation {
 
     // wersja z ArrayListą<BigInteger> i wielkimi potęgami
-
     public static void main(String[] args) {
-
         byte numOfCases = getNrOfCases();
         List<BigInteger> results = determineCases(numOfCases);
         getExpResults(results);

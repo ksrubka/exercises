@@ -20,7 +20,6 @@ public class Stefan1 {
         for (int cityNum = 0; cityNum < numOfCities; cityNum++) {
             generateProfit = (random.nextInt(200000) - 100000);
             System.out.println((cityNum + 1) + " miasto: " + generateProfit);
-
             if (cityNum == 0 || cityNum == numOfCities - 1) {
                 if (generateProfit < 0)
                     continue;

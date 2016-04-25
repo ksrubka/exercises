@@ -11,7 +11,6 @@ public class Exponentiation1 {
     // (zmieniona w stosunku do wymagań, by wydobyć wynik na konsolę)
 
     public static void main(String[] args) {
-
         byte numOfCases = getNrOfCases();
         long[] results = determineCases(numOfCases);
         getExpResults(results);
@@ -36,7 +35,6 @@ public class Exponentiation1 {
     }
 
     private static void getExpResults(long[] results){
-
         for (long result : results) {
             String stringResult = String.valueOf(result);
             String lastDigit = stringResult.substring(stringResult.length() -1);
