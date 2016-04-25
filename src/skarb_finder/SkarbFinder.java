@@ -21,6 +21,30 @@ public class SkarbFinder {
         }
     }
 
+    public static void main(String[] args) {
+        SkarbFinder skarbFinder = new SkarbFinder();
+        getShortestWay(skarbFinder.position);
+    }
+
+    public static void getShortestWay(MyPoint position){
+        int x = (int) position.getX();
+        int y = (int) position.getY();
+        int verticalDirection = (x > 0) ? 0 : 1;
+        int horizontalDirection = (y > 0) ? 3 : 2;
+
+        System.out.println();
+        if (x == 0 && y == 0)
+            System.out.println("studnia");
+        else if (x == 0)
+            System.out.println(horizontalDirection + " " + Math.abs(y));
+        else if (y == 0)
+            System.out.println(verticalDirection + " " + Math.abs(x));
+        else {
+            System.out.println(verticalDirection + " " + Math.abs(x));
+            System.out.println(horizontalDirection + " " + Math.abs(y));
+        }
+    }
+
     public class MyPoint extends Point {
         public void addToX(long x){
             this.x += x;
@@ -67,30 +91,6 @@ public class SkarbFinder {
 
         public void go(int steps){
             movingDirection.go(steps, position);
-        }
-    }
-
-    public static void main(String[] args) {
-        SkarbFinder skarbFinder = new SkarbFinder();
-        getShortestWay(skarbFinder.position);
-    }
-
-    public static void getShortestWay(MyPoint position){
-        int x = (int) position.getX();
-        int y = (int) position.getY();
-        int verticalDirection = (x > 0) ? 0 : 1;
-        int horizontalDirection = (y > 0) ? 3 : 2;
-
-        System.out.println();
-        if (x == 0 && y == 0)
-            System.out.println("studnia");
-        else if (x == 0)
-            System.out.println(horizontalDirection + " " + Math.abs(y));
-        else if (y == 0)
-            System.out.println(verticalDirection + " " + Math.abs(x));
-        else {
-            System.out.println(verticalDirection + " " + Math.abs(x));
-            System.out.println(horizontalDirection + " " + Math.abs(y));
         }
     }
 }
