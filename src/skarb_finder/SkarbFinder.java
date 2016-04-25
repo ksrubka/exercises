@@ -54,11 +54,11 @@ public class SkarbFinder {
             this.y += y;
         }
 
-        public void substractFromX(long x){
+        public void subtractFromX(long x){
             this.x -= x;
         }
 
-        public void substractFromY(long y){
+        public void subtractFromY(long y){
             this.y -= y;
         }
     }
