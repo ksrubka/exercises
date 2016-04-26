@@ -9,9 +9,9 @@ import java.util.Random;
  */
 public class TrasaKoncertowaStefana {
 
-    int numOfEvents;
-    int biggestPossibleProfit;
-    int[] profitsInCities;
+    private int numOfEvents;
+    private int biggestPossibleProfit;
+    private int[] profitsInCities;
 
     public TrasaKoncertowaStefana(int numOfEvents){
         this.numOfEvents = numOfEvents;
@@ -19,7 +19,7 @@ public class TrasaKoncertowaStefana {
         this.biggestPossibleProfit = checkTheProfitInCities(numOfEvents);
     }
 
-    public int checkTheProfitInCities(int numOfCities) {
+    private int checkTheProfitInCities(int numOfCities) {
         Random random = new Random();
         int generateProfit;
         int biggestProfit = 0;
