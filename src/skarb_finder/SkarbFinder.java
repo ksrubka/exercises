@@ -25,7 +25,7 @@ public class SkarbFinder {
         getShortestWay(skarbFinder.position);
     }
 
-    public static void getShortestWay(MyPoint position){
+    private static void getShortestWay(MyPoint position){
         int x = (int) position.getX();
         int y = (int) position.getY();
         int verticalDirection = (x > 0) ? 0 : 1;
@@ -44,7 +44,7 @@ public class SkarbFinder {
         }
     }
 
-    public class MyPoint extends Point {
+   public class MyPoint extends Point {
         public void addToX(long x){
             this.x += x;
         }
@@ -62,7 +62,7 @@ public class SkarbFinder {
         }
     }
 
-    public class DataSet {
+    private class DataSet {
         int nrOfHints;
         List<Hint> hints = new ArrayList<>();
 
@@ -74,7 +74,7 @@ public class SkarbFinder {
         }
     }
 
-    public class Hint {
+    class Hint {
         int direction;
         int steps;
         MovingStrategy movingDirection;
@@ -87,7 +87,7 @@ public class SkarbFinder {
             go(steps);
         }
 
-        public void go(int steps){
+        private void go(int steps){
             movingDirection.go(steps, position);
         }
     }
