@@ -5,9 +5,9 @@ package sorting;
  */
 public class Rolk {
 
-    int n;
-    int k;
-    int[] newNumbers;
+    private int n;
+    private int k;
+    private int[] newNumbers;
 
     public Rolk(int n, int k){
         this.n = n;
@@ -23,8 +23,7 @@ public class Rolk {
         Rolk sorting = new Rolk(31, 2);
     }
 
-    public int[] getOutput(int n, int k) {
-
+    private int[] getOutput(int n, int k) {
         int[] numbers = createArray(n, k);
         int[] newNumbers = new int[n];
 
@@ -34,16 +33,14 @@ public class Rolk {
             if (index < (numbers.length - k))
                 newNumbers[index + k] = i;
             else
-                newNumbers[index1++] = i;{
-            this.k = k;
-        }
+                newNumbers[index1++] = i;
             index++;
         }
         return newNumbers;
     }
 
 
-    public int[] createArray(int n, int k){
+    private int[] createArray(int n, int k){
         int[] numbers = new int[n];
         System.out.println(n + " " + k);
         for (int i = 1; i <= n; i++) {
@@ -54,7 +51,7 @@ public class Rolk {
         return numbers;
     }
 
-    public void printOutput(int[] newNumbers){
+    private void printOutput(int[] newNumbers){
         for (int number : newNumbers){
             System.out.print(number + " ");
         }
