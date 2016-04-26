@@ -27,7 +27,7 @@ public class Exponentiation {
         for (int caseNr = 0; caseNr < numOfCases; caseNr++) {
             // aby komputer był w stanie wyświetlić te liczby na ekranie
             // należy zmniejszyć wartości a i b
-            // (mój komputer miał z tym trudności)
+            // (a przymnajmniej mój komputer miał z tym trudności)
             int a = (int) (Math.random() * 1000000000 + 1);
             int b = (int) (Math.random() * 1000000000 + 1);
             results.add(exponentiate(a, b));
