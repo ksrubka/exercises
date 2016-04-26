@@ -8,10 +8,10 @@ import java.util.Scanner;
  */
 public class Stefan1 {
     public static void main(String[] args) {
-        checkTheProfitInCities(6);
+        checkProfitInCities(6);
     }
 
-    public static void checkTheProfitInCities(int numOfCities) {
+    public static void checkProfitInCities(int numOfCities) {
         Random random = new Random();
         int generateProfit;
         int biggestProfit = 0;

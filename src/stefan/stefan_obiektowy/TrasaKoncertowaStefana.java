@@ -1,7 +1,5 @@
 package stefan.stefan_obiektowy;
 
-import stefan.Stefan1;
-
 import java.util.Random;
 
 /**
@@ -16,10 +14,10 @@ public class TrasaKoncertowaStefana {
     public TrasaKoncertowaStefana(int numOfEvents){
         this.numOfEvents = numOfEvents;
         this.profitsInCities = new int[numOfEvents];
-        this.biggestPossibleProfit = checkTheProfitInCities(numOfEvents);
+        this.biggestPossibleProfit = checkProfitInCities(numOfEvents);
     }
 
-    private int checkTheProfitInCities(int numOfCities) {
+    private int checkProfitInCities(int numOfCities) {
         Random random = new Random();
         int generateProfit;
         int biggestProfit = 0;
