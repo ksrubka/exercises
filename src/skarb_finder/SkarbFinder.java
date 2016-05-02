@@ -9,9 +9,9 @@ import java.util.List;
  * Created by Beata Iłowiecka on 25.04.16.
  */
 public class SkarbFinder {
-    int nrOfDataSets;
-    List<DataSet> dataSets = new ArrayList<>();
-    MyPoint position = new MyPoint();
+    private int nrOfDataSets;
+    private List<DataSet> dataSets = new ArrayList<>();
+    private MyPoint position = new MyPoint();
 
     public SkarbFinder(){
         this.nrOfDataSets = (int) (Math.random() * 51);
@@ -63,8 +63,8 @@ public class SkarbFinder {
     }
 
     private class DataSet {
-        int nrOfHints;
-        List<Hint> hints = new ArrayList<>();
+        private int nrOfHints;
+        private List<Hint> hints = new ArrayList<>();
 
         public DataSet(){
             this.nrOfHints = (int) (Math.random() * 100001);
@@ -75,9 +75,9 @@ public class SkarbFinder {
     }
 
     class Hint {
-        int direction;
-        int steps;
-        MovingStrategy movingDirection;
+        private int direction;
+        private int steps;
+        private MovingStrategy movingDirection;
 
         public Hint(){
             this.direction = (int) (Math.random() * 4);
