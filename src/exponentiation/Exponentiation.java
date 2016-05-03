@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class Exponentiation {
 
-    // wersja z ArrayListą<BigInteger> i wielkimi potęgami
     public static void main(String[] args) {
         byte numOfCases = getNrOfCases();
         List<BigInteger> results = determineCases(numOfCases);
@@ -18,6 +17,7 @@ public class Exponentiation {
 
     private static byte getNrOfCases() {
         byte numOfCases = (byte) (Math.random() * 10 + 1);
+        //liczba przypadków
         System.out.println(numOfCases);
         return numOfCases;
     }
@@ -36,6 +36,7 @@ public class Exponentiation {
     }
 
     private static BigInteger exponentiate(int a, int b) {
+        // przypadki
         System.out.println(a + " " + b);
         BigInteger expResult = BigInteger.valueOf(a);
         BigInteger valueOfA = BigInteger.valueOf(a);
@@ -48,6 +49,7 @@ public class Exponentiation {
         for (BigInteger result : results) {
             String stringResult = String.valueOf(result);
             String lastDigit = stringResult.substring(stringResult.length() - 1);
+            // ostatnia cyfra potęgi - wynik
             System.out.println(lastDigit);
         }
     }
