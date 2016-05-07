@@ -14,7 +14,7 @@ public class Exponentiation {
         Scanner s = new Scanner(System.in);
         byte numOfLines = getNrOfLines();
         List<BigInteger> results = determineLines(numOfLines);
-        getExpResults(results);
+        getExponentiationResults(results);
     }
 
     private static byte getNrOfLines() {
