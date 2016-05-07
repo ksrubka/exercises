@@ -47,11 +47,13 @@ public class Exponentiation {
         return expResult;
     }
 
-    private static void getExpResults(List<BigInteger> results) {
+    private static void getExponentiationResults(List<BigInteger> results) {
         for (BigInteger result : results) {
             String stringResult = String.valueOf(result);
-            String lastDigit = stringResult.substring(stringResult.length() - 1);
+            int lastIndex = stringResult.length() - 1;
+            String lastDigitAsString = stringResult.substring(lastIndex);
             // ostatnia cyfra potęgi - wynik
+            int lastDigit = Integer.valueOf(lastDigitAsString);
             System.out.println(lastDigit);
         }
     }
