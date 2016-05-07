@@ -13,7 +13,7 @@ public class Exponentiation {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         byte numOfLines = getNrOfLines();
-        List<BigInteger> results = determineCases(numOfLines);
+        List<BigInteger> results = determineLines(numOfLines);
         getExpResults(results);
     }
 
@@ -24,9 +24,9 @@ public class Exponentiation {
         return numOfLines;
     }
 
-    private static List<BigInteger> determineCases(byte numOfCases) {
+    private static List<BigInteger> determineLines(byte numOfLines) {
         List<BigInteger> results = new ArrayList<>();
-        for (int caseNr = 0; caseNr < numOfCases; caseNr++) {
+        for (int lineNr = 0; lineNr < numOfLines; lineNr++) {
             // aby komputer był w stanie wyświetlić te liczby na ekranie
             // należy zmniejszyć wartości a i b
             // (a przymnajmniej mój komputer miał z tym trudności)
