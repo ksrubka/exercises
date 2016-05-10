@@ -13,9 +13,8 @@ public class Exp1 {
     public static void main(String[] args) {
         byte numOfLines = getNrOfLines();
         List<BigInteger> results = null;
-
         for(int i = 1; i <= numOfLines; i++){
-            determineLines(numOfLines);
+            results.add(determineLine());
         }
         getExponentiationResults(results);
     }
@@ -25,16 +24,12 @@ public class Exp1 {
         return scanner.nextByte();
     }
 
-    private static List<BigInteger> determineLines(byte numOfLines) {
-        List<BigInteger> results = new ArrayList<>();
-        for (int lineNr = 0; lineNr < numOfLines; lineNr++) {
-            Scanner scanner = new Scanner(System.in);
-            String[] ab = scanner.nextLine().split(" ");
-            int a = new Integer(ab[0]);
-            int b = new Integer(ab[1]);
-            results.add(exponentiate(a, b));
-        }
-        return results;
+    private static BigInteger determineLine() {
+        Scanner scanner = new Scanner(System.in);
+        String[] ab = scanner.nextLine().split(" ");
+        int a = new Integer(ab[0]);
+        int b = new Integer(ab[1]);
+        return exponentiate(a, b);
     }
 
     private static BigInteger exponentiate(int a, int b) {
