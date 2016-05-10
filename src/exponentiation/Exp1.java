@@ -12,10 +12,9 @@ public class Exp1 {
 
     public static void main(String[] args) {
         byte numOfLines = getNrOfLines();
-        List<BigInteger> results = null;
-        for(int i = 1; i <= numOfLines; i++){
+        List<BigInteger> results = new ArrayList<>();
+        for(int i = 1; i <= numOfLines; i++)
             results.add(determineLine());
-        }
         getExponentiationResults(results);
     }
 
