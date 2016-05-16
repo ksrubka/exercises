@@ -33,11 +33,15 @@ public class Exponentiation {
 
     private static BigInteger determineLine(BufferedReader reader) throws IOException {
         String[] ab = reader.readLine().split(" ");
-        if (new Long(ab[0]) > BIGGEST_NUMBER || new Long(ab[1]) > BIGGEST_NUMBER)
-            throw new IllegalArgumentException("Potęgowane liczby powinny mieścić się w zakresie: 1 - 1 000 000 000");
+        testNumbers(new Long(ab[0]), new Long(ab[1]));
         int a = new Integer(ab[0]);
         int b = new Integer(ab[1]);
         return exponentiate(a, b);
+    }
+
+    private static void testNumbers(long a, long b){
+        if (a <= 0 || a > BIGGEST_NUMBER || b <= 0 || b > BIGGEST_NUMBER)
+            throw new IllegalArgumentException("Potęgowane liczby powinny mieścić się w zakresie: 1 - 1 000 000 000");
     }
 
     private static BigInteger exponentiate(int a, int b) {
