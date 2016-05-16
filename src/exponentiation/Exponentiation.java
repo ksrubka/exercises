@@ -13,14 +13,18 @@ import java.lang.*;
  */
 public class Exponentiation {
 
+    public static final int BIGGEST_NUMBER = 1000000000;
 
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         byte numOfLines = getNrOfLines(reader);
+        if (numOfLines <= 0 || numOfLines > 10)
+            throw new IllegalArgumentException("Liczba linijek powinna mieścić się w zakresie: 1-10");
+
         List<BigInteger> results = new ArrayList<>();
         for (int i = 1; i <= numOfLines; i++)
             results.add(determineLine(reader));
-        getExponentiationResults(results);
+        getLastDigitsOfExponentiationResults(results);
     }
 
     private static byte getNrOfLines(BufferedReader reader) throws IOException {
@@ -29,6 +33,8 @@ public class Exponentiation {
 
     private static BigInteger determineLine(BufferedReader reader) throws IOException {
         String[] ab = reader.readLine().split(" ");
+        if (new Long(ab[0]) > BIGGEST_NUMBER || new Long(ab[1]) > BIGGEST_NUMBER)
+            throw new IllegalArgumentException("Potęgowane liczby powinny mieścić się w zakresie: 1 - 1 000 000 000");
         int a = new Integer(ab[0]);
         int b = new Integer(ab[1]);
         return exponentiate(a, b);
@@ -42,13 +48,11 @@ public class Exponentiation {
         return expResult;
     }
 
-    private static void getExponentiationResults(List<BigInteger> results) {
+    private static void getLastDigitsOfExponentiationResults(List<BigInteger> results) {
         for (BigInteger result : results) {
             String stringResult = String.valueOf(result);
             int lastIndex = stringResult.length() - 1;
-            String lastDigitAsString = stringResult.substring(lastIndex);
-            // ostatnia cyfra potęgi - wynik
-            int lastDigit = Integer.valueOf(lastDigitAsString);
+            String lastDigit = stringResult.substring(lastIndex);
             System.out.println(lastDigit);
         }
     }
