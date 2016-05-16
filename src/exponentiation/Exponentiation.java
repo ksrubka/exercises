@@ -1,48 +1,43 @@
 package exponentiation;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+import java.lang.*;
 
 /**
- * Created by Beata Iłowiecka on 25.04.16.
+ * Created by Beata Iłowiecka on 15.05.16.
  */
 public class Exponentiation {
 
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        byte numOfLines = getNrOfLines();
-        List<BigInteger> results = determineLines(numOfLines);
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        byte numOfLines = getNrOfLines(reader);
+        List<BigInteger> results = new ArrayList<>();
+        for (int i = 1; i <= numOfLines; i++)
+            results.add(determineLine(reader));
         getExponentiationResults(results);
     }
 
-    private static byte getNrOfLines() {
-        byte numOfLines = (byte) (Math.random() * 10 + 1);
-        //liczba przypadków
-        System.out.println(numOfLines);
-        return numOfLines;
+    private static byte getNrOfLines(BufferedReader reader) throws IOException {
+        return Byte.parseByte(reader.readLine());
     }
 
-    private static List<BigInteger> determineLines(byte numOfLines) {
-        List<BigInteger> results = new ArrayList<>();
-        for (int lineNr = 0; lineNr < numOfLines; lineNr++) {
-            // aby komputer był w stanie wyświetlić te liczby na ekranie
-            // należy zmniejszyć wartości a i b
-            // (a przymnajmniej mój komputer miał z tym trudności)
-            int a = (int) (Math.random() * 1000000000 + 1);
-            int b = (int) (Math.random() * 1000000000 + 1);
-            results.add(exponentiate(a, b));
-        }
-        return results;
+    private static BigInteger determineLine(BufferedReader reader) throws IOException {
+        String[] ab = reader.readLine().split(" ");
+        int a = new Integer(ab[0]);
+        int b = new Integer(ab[1]);
+        return exponentiate(a, b);
     }
 
     private static BigInteger exponentiate(int a, int b) {
-        // przypadki
-        System.out.println(a + " " + b);
         BigInteger expResult = BigInteger.valueOf(a);
         BigInteger valueOfA = BigInteger.valueOf(a);
-        for (int expPhase = 0; expPhase < b; expPhase++)
+        for (int expPhase = 0; expPhase < b-1; expPhase++)
             expResult = expResult.multiply(valueOfA);
         return expResult;
     }
