@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class ScannerReader {
 
     public static void main(String[] args) throws FileNotFoundException {
-        String fileName = "/media/radekibeatka/F854-9417/Beatka/Programowanie/Bottega/materiały/text.txt";
+        String fileName = "src/text.txt";
         File textFile = new File(fileName);
 
         Scanner in = new Scanner(textFile);
