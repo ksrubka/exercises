@@ -87,7 +87,9 @@ public class View extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String password = new String(passField.getPassword());
         String name = nameField.getText();
-        System.out.println("name: " + name + "\n" + "password: " + password);
+        if (loginListener != null)
+            loginListener.loginPerformed(new LoginFormEvent(name, password));
+        //System.out.println("name: " + name + "\n" + "password: " + password);
     }
 
     public void setLoginListener(LoginListener loginListener) {
