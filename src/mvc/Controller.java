@@ -14,7 +14,9 @@ public class Controller implements LoginListener {
     }
 
     @Override
-    public void loginPerformed() {
-        System.out.println("login performed");
+    public void loginPerformed(LoginFormEvent event) {
+        System.out.println("login event received: " + event.getName() + "; "
+        + event.getPassword());
+
     }
 }
