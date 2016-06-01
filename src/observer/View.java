@@ -16,7 +16,7 @@ public class View extends JFrame implements ActionListener {
     private JButton byeButton;
     private JButton niceButton;
 
-    public View(Model model) throws HeadlessException {
+    public View() throws HeadlessException {
         super("MVC Demo");
         helloButton = new JButton("I'm the first button!");
         byeButton = new JButton("I'm second!");
