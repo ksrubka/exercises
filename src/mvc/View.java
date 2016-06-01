@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 public class View extends JFrame implements ActionListener {
 
     private Model model;
+    private LoginListener loginListener;
     private JButton okButton;
     private JTextField nameField;
     private JPasswordField passField;
@@ -87,5 +88,9 @@ public class View extends JFrame implements ActionListener {
         String password = new String(passField.getPassword());
         String name = nameField.getText();
         System.out.println("name: " + name + "\n" + "password: " + password);
+    }
+
+    public void setLoginListener(LoginListener loginListener) {
+        this.loginListener = loginListener;
     }
 }
