@@ -4,11 +4,13 @@ import mvc.model.Model;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Beata Iłowiecka on 01.06.16.
  */
-public class View extends JFrame {
+public class View extends JFrame implements ActionListener {
 
     private Model model;
     private JButton helloButton;
@@ -28,66 +30,20 @@ public class View extends JFrame {
         gbc.fill= GridBagConstraints.NONE;
 
         add(helloButton, gbc);
+        helloButton.addActionListener(this);
 
         setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton source = (JButton) e.getSource();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        if (source==helloButton)
+            System.out.println("Hello There");
+        else
+            System.out.println("second button");
+    }
 }
