@@ -12,14 +12,12 @@ import java.awt.event.ActionListener;
  */
 public class View extends JFrame implements ActionListener {
 
-    private Model model;
     private JButton helloButton;
     private JButton byeButton;
     private JButton niceButton;
 
     public View(Model model) throws HeadlessException {
         super("MVC Demo");
-        this.model = model;
         helloButton = new JButton("I'm the first button!");
         byeButton = new JButton("I'm second!");
         niceButton = new JButton("I'm third");
