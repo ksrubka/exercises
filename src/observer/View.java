@@ -1,6 +1,6 @@
-package mvc.view;
+package observer;
 
-import mvc.model.Model;
+import mvc.Model;
 
 import javax.swing.*;
 import java.awt.*;

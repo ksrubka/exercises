@@ -1,4 +1,7 @@
-package mvc;
+package observer;
+
+import mvc.Controller;
+import mvc.Model;
 
 import javax.swing.*;
 
@@ -18,8 +21,58 @@ public class Application {
 
     public static void runApp() {
         Model model = new Model();
-        observer.View view = new observer.View(model);
+        View view = new View(model);
         Controller controller = new Controller(model, view);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
