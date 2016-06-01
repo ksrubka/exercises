@@ -20,9 +20,9 @@ public class View extends JFrame implements ActionListener {
     public View(Model model) throws HeadlessException {
         super("MVC Demo");
         this.model = model;
-        helloButton = new JButton("Click Me!");
-        byeButton = new JButton("Bye!");
-        niceButton = new JButton("How are You?");
+        helloButton = new JButton("I'm the first button!");
+        byeButton = new JButton("I'm second!");
+        niceButton = new JButton("I'm third");
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
 
@@ -48,7 +48,7 @@ public class View extends JFrame implements ActionListener {
         byeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Don't go :)");
+                System.out.println("I'm the first of anonymous messages of a byeButton.");
             }
         });
 
@@ -64,7 +64,19 @@ public class View extends JFrame implements ActionListener {
         niceButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("I'm great :)");
+                System.out.println("I'm the first of anonymous messages of a niceButton.");
+            }
+        });
+        niceButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("I'm the second of anonymous messages of a niceButton.");
+            }
+        });
+        niceButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("I'm the third of anonymous messages of a niceButton.");
             }
         });
 
@@ -78,10 +90,10 @@ public class View extends JFrame implements ActionListener {
         JButton source = (JButton) e.getSource();
 
         if (source == helloButton)
-            System.out.println("Hello There");
+            System.out.println("First message from this ActionListener - helloButon");
         else if (source == byeButton)
-            System.out.println("");
+            System.out.println("Second message from this ActionListener - byeButton");
         else
-            System.out.println("It's so nice to sea You ;) ");
+            System.out.println("Third message from this ActionListener - niceButton");
     }
 }
