@@ -11,10 +11,12 @@ import java.awt.*;
 public class View extends JFrame {
 
     private Model model;
+    private JButton helloButton;
 
     public View(Model model) throws HeadlessException {
         super("MVC Demo");
         this.model = model;
+        helloButton = new JButton("Click Me!");
 
         setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -24,6 +26,8 @@ public class View extends JFrame {
         gbc.weightx = 1;
         gbc.weighty=1;
         gbc.fill= GridBagConstraints.NONE;
+
+        add(helloButton, gbc);
 
         setSize(600, 600);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
